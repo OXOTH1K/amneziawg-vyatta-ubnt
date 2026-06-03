@@ -203,8 +203,7 @@ jobs:
         include:
           - arch: mips
             target: mips-linux-musl
-          - arch: mipsel
-            target: mipsel-linux-musl
+
     steps:
       - uses: actions/checkout@v2
       - name: Build tools
