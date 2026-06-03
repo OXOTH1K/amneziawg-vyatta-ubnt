@@ -7,6 +7,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+  actions: read
+
 env:
   MODULE_VERSION: "1.0.20260329-2"
   TOOLS_VERSION: "1.0.20250706"
