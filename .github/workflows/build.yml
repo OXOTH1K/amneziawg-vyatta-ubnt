@@ -35,26 +35,11 @@ jobs:
 
     strategy:
       matrix:
-        device: [e100, e200, e300, e1000, ugw3, ugw4, ugwxg]
-        version: [1, 2]
-        toolchain: [mips64-octeon-linux-]
-        image: [octeon-kernel]
-        exclude:
-          - device: ugw3
-            version: 2
-          - device: ugw4
-            version: 2
-          - device: ugwxg
-            version: 2
         include:
-          - device: e50
+          - device: ugw4
             version: 1
-            toolchain: mipsel-mtk-linux-
-            image: mtk-kernel
-          - device: e50
-            version: 2
-            toolchain: mipsel-linux-gnu-
-            image: mipsel-kernel
+            toolchain: mips64-octeon-linux-
+            image: octeon-kernel
 
     steps:
       - uses: actions/checkout@v2
@@ -150,26 +135,11 @@ jobs:
 
     strategy:
       matrix:
-        device: [e100, e200, e300, e1000, ugw3, ugw4, ugwxg]
-        version: [1, 2]
-        toolchain: [mips64-octeon-linux-]
-        image: [octeon-kernel]
-        exclude:
-          - device: ugw3
-            version: 2
-          - device: ugw4
-            version: 2
-          - device: ugwxg
-            version: 2
         include:
-          - device: e50
+          - device: ugw4
             version: 1
-            toolchain: mipsel-mtk-linux-
-            image: mtk-kernel
-          - device: e50
-            version: 2
-            toolchain: mipsel-mtk-linux-
-            image: mtk-kernel
+            toolchain: mips64-octeon-linux-
+            image: octeon-kernel
 
     steps:
       - uses: actions/checkout@v2
@@ -263,23 +233,11 @@ jobs:
 
     strategy:
       matrix:
-        device: [e100, e200, e300, e1000, ugw3, ugw4, ugwxg]
-        version: [1, 2]
-        arch: [mips]
-        exclude:
-          - device: ugw3
-            version: 2
-          - device: ugw4
-            version: 2
-          - device: ugwxg
-            version: 2
         include:
-          - device: e50
+          - device: ugw4
             version: 1
-            arch: mipsel
-          - device: e50
-            version: 2
-            arch: mipsel
+            toolchain: mips64-octeon-linux-
+            image: octeon-kernel
     steps:
       - uses: actions/checkout@v2
       - name: Download module
