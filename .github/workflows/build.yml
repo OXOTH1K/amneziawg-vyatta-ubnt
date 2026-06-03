@@ -29,7 +29,7 @@ jobs:
     needs: docker
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/${{ github.repository_owner }}/ubnt-build:${{ matrix.image }}
+      image: ghcr.io/oxoth1k/ubnt-build:${{ matrix.image }}
       env:
         CROSS: ${{ matrix.toolchain }}
 
@@ -146,7 +146,7 @@ jobs:
     needs: [docker, module-prepare, headers]
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/${{ github.repository_owner }}/ubnt-build:${{ matrix.image }}
+      image: ghcr.io/oxoth1k/ubnt-build:${{ matrix.image }}
 
     strategy:
       matrix:
@@ -226,7 +226,7 @@ jobs:
     needs: docker
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/${{ github.repository_owner }}/ubnt-build:${{ matrix.arch }}-tools
+      image: ghcr.io/oxoth1k/ubnt-build:${{ matrix.arch }}-tools
 
     strategy:
       matrix:
