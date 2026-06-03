@@ -246,7 +246,7 @@ jobs:
       - name: Download tools
         uses: actions/download-artifact@v4
         with:
-          name: tools-${{ matrix.arch }}
+          name: tools-mips
       - name: Build package
         run: |
           apt update
@@ -261,7 +261,7 @@ jobs:
           sed -i "s/PACKAGE_VERSION/$MODULE_VERSION/g" pkg/DEBIAN/control
           sed -i "s/PACKAGE_RELEASE/$PACKAGE_RELEASE/g" pkg/DEBIAN/control
           sed -i "s/KERNEL_VER/$KERNEL/g" pkg/DEBIAN/preinst
-          sed -i "s/PACKAGE_ARCH/${{ matrix.arch }}/g" pkg/DEBIAN/control
+          sed -i "s/PACKAGE_ARCH/mips/g" pkg/DEBIAN/control
           dpkg-deb -b -Z gzip pkg
           mv pkg.deb ${{ matrix.device }}-v${{ matrix.version }}-v$MODULE_VERSION-v$TOOLS_VERSION.deb
       - name: Upload package
